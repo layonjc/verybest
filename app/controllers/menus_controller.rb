@@ -1,6 +1,6 @@
 class MenusController < ApplicationController
   def index
-    @menus = Menu.all
+    @menus = Menu.page(params[:page]).per(10)
 
     render("menus/index.html.erb")
   end

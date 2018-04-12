@@ -1,6 +1,6 @@
 class BucketListsController < ApplicationController
   def index
-    @bucket_lists = BucketList.all
+    @bucket_lists = BucketList.page(params[:page]).per(10)
 
     render("bucket_lists/index.html.erb")
   end
