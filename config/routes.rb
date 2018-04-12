@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Bucket_list resource:
+  # CREATE
+  get "/bucket_lists/new", :controller => "bucket_lists", :action => "new"
+  post "/create_bucket_list", :controller => "bucket_lists", :action => "create"
+
+  # READ
+  get "/bucket_lists", :controller => "bucket_lists", :action => "index"
+  get "/bucket_lists/:id", :controller => "bucket_lists", :action => "show"
+
+  # UPDATE
+  get "/bucket_lists/:id/edit", :controller => "bucket_lists", :action => "edit"
+  post "/update_bucket_list/:id", :controller => "bucket_lists", :action => "update"
+
+  # DELETE
+  get "/delete_bucket_list/:id", :controller => "bucket_lists", :action => "destroy"
+  #------------------------------
+
   # Routes for the Venue resource:
   # CREATE
   get "/venues/new", :controller => "venues", :action => "new"

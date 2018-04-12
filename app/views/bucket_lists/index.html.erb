@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h1>
+    Bucket lists
+    <a href="/bucket_lists/new" class="btn btn-lg btn-success">New Bucket list</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Actions</th>
+      </tr>
+
+      <% @bucket_lists.each do |bucket_list| %>
+      <tr>
+        <td>
+          <a href="/bucket_lists/<%= bucket_list.id %>" class="btn btn-primary">Show</a>
+          <a href="/bucket_lists/<%= bucket_list.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_bucket_list/<%= bucket_list.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
